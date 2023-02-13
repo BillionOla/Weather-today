@@ -82,5 +82,8 @@ footer {
   font-size: 50px;
 }
 #git {
-   font-size: 15px;
+   font-size: 11px;
+   position: relative;
+   top: -100px;
+   right: -59px;
 }
