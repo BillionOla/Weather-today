@@ -66,6 +66,7 @@ button {
 }
 footer {
   font-size: 10px;
+
 }
 #city {
   font-size: 40px;
@@ -85,5 +86,5 @@ footer {
    font-size: 11px;
    position: relative;
    top: -100px;
-   right: -59px;
+   right: -300px;
 }
