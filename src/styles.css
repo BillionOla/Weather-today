@@ -20,18 +20,19 @@ hr {
 }
 .container {
   background: rgba(11, 30, 11, 0.148);
-  width: 700px;
+  width: 500px;
   padding: 30px;
   border-radius: 20px;
   margin-top: 150px;
   margin-bottom: 100px;
+  size: 500px;
 }
 #city-input {
   width: 350px;
   height: 40px;
   border-radius: 15px;
 }
-.emoji {
+#emoji {
   line-height: 60px;
   font-size: 100px;
 }
