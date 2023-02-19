@@ -20,15 +20,15 @@ hr {
 }
 .container {
   background: rgba(11, 30, 11, 0.148);
-  width: 500px;
   padding: 30px;
   border-radius: 20px;
   margin-top: 150px;
   margin-bottom: 100px;
-  
+  display: block;
+ 
 }
 #city-input {
-  width: 350px;
+  width: 300px;
   height: 40px;
   border-radius: 15px;
 }
@@ -56,9 +56,7 @@ hr {
 .low {
   font-size: 12px;
 }
-.hoverweather {
-  color: grey;
-}
+
 button {
   position: relative;
   left: 10px;
@@ -88,4 +86,27 @@ footer {
    position: relative;
    top: -100px;
    right: -300px;
+}
+#fair{
+  position:relative;
+  top: -20px;
+}
+#weather-change-icon{
+  padding: 6px;
+}
+.row{
+  font-weight: 400px;
+}
+.active{
+  cursor:default;
+  color: #212521;
+}
+.active:hover{
+  text-decoration: none;
+}
+#celsius-link {
+     text-decoration: none;
+}
+#fahrenheit-link{
+    text-decoration: none;
 }
