@@ -25,14 +25,14 @@ hr {
   border-radius: 20px;
   margin-top: 150px;
   margin-bottom: 100px;
-  size: 500px;
+  
 }
 #city-input {
   width: 350px;
   height: 40px;
   border-radius: 15px;
 }
-#emoji {
+#icon {
   line-height: 60px;
   font-size: 100px;
 }
