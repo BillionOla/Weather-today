@@ -1,4 +1,4 @@
-.chill1{
+.chill{
   background-color: rgba(175, 232, 232, 0.157);
 }
 h5 {
@@ -17,9 +17,8 @@ hr {
   border-radius: 20px;
   margin-top: 150px;
   margin-bottom: 100px;
-  display: block;
-  margin: 40px auto;
-  max-width: 500px;
+  display: block; 
+  width: 600px;
 }
 #city-input {
   width: 300px;
@@ -77,7 +76,7 @@ footer {
    font-size: 11px;
    position: relative;
    top: -100px;
-   right: -300px;
+   text-align: center;
 }
 #fair{
   position:relative;
@@ -101,7 +100,7 @@ footer {
 }
 
 .weather-forecast{
-margin-top: 20px;
+margin-top: 5px;
 } 
 .weather-forecast-date{
 font-size: 16px;
@@ -112,4 +111,10 @@ opacity:0.6;
 }
 .weather-forecast-temperature-min{
   opacity: 0.5;
+}
+#hummy{
+  font-size: 17px;
+}
+#descript{
+  font-size: 20px;
 }
