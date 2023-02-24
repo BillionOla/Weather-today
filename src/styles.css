@@ -25,7 +25,7 @@ hr {
   margin-top: 150px;
   margin-bottom: 100px;
   display: block;
-  margin:30px;
+ 
  
 }
 #city-input {
@@ -113,7 +113,7 @@ footer {
 }
 
 .weather-forecast{
- text-align: center;
+ 
 margin-top: 20px;
 
 } 

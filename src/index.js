@@ -19,6 +19,40 @@ let minutes = [now.getMinutes()];
 
 p.innerHTML = `${day}, ${date}. ${hours}:${minutes}`;
 
+function displayForecast(){
+
+  let forecastElement=document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tue"];
+days.forEach(function(day){
+    forecastHTML = 
+  forecastHTML + 
+  `
+          <div class="col-2" >
+             <div weather-forecast-date>${day} </div>
+              <div>
+               <img 
+                src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="42" />
+                 <div class="weather-forecast-temperature"> 
+                  <span class="weather-forecast-temperature-max"> 18° </span>
+                   <span class="weather-forecast-temperature-min"> 12° </span>
+         </div>
+       </div>
+      </div>
+`;
+});
+  forecastHTML = forecastHTML + `<div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates){
+  console.log(coordinates);
+  let apiKey = "2da40a2dd6ecb600a6befee8dc71a523";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  
+  console.log(apiUrl);
+} 
+
 function showResponse(response) {
   let cityVal = document.querySelector("#city");
   let temperatureVal = document.querySelector("#temp");
@@ -39,6 +73,8 @@ function showResponse(response) {
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
    );
  iconVal.setAttribute("alt", response.data.weather[0].description);
+
+ getForecast(response.data.coord);
 }
 function searchCity(cityIn) {
   let apiKey = "2da40a2dd6ecb600a6befee8dc71a523";
@@ -53,10 +89,7 @@ function submitSearch(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSearch);
 
-//let form = document.querySelector("#search-form");
-//form.addEventListener("submit", handleSubmit);
 
-//
 function displayFahrenheitTemperature (event){
   event.preventDefault();
    let temperatureVal = document.querySelector("#temp");
@@ -67,6 +100,7 @@ function displayFahrenheitTemperature (event){
 }
 
 let celsiusTemperature = null; 
+
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
@@ -82,3 +116,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("New York");
+displayForecast();
+
