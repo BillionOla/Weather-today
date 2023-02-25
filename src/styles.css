@@ -24,6 +24,7 @@ hr {
   width: 300px;
   height: 40px;
   border-radius: 15px;
+  display:inline;
 }
 #icon {
   line-height: 60px;
@@ -63,7 +64,9 @@ footer {
 }
 #submit-value {
   color: black;
-  background: rgb(124, 191, 249);
+  background: rgb(151, 179, 216);
+  border-radius: 6px;
+  border-color:  rgb(151, 179, 216);
 }
 #celcius {
   position: relative;
@@ -85,11 +88,8 @@ footer {
 #weather-change-icon{
   padding: 6px;
 }
-.active{
-  cursor:default;
-  color: #212521;
 
-}
+
 .active:hover{
   text-decoration: none;
 }

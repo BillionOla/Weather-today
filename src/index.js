@@ -14,8 +14,12 @@ let days = [
 let day = days[now.getDay()];
 let date = [now.getDate()];
 let hours = [now.getHours()];
+if (hours < 10){
+ hours = `0${hours}`;}
+
 let minutes = [now.getMinutes()];
-//let months = {now.getMonths()};
+if (minutes < 10){
+ minutes = `0${minutes}`;}
 
 p.innerHTML = `${day}, ${date}. ${hours}:${minutes}`;
 
@@ -67,7 +71,7 @@ function displayForecast(response){
 function getForecast(coordinates){
   console.log(coordinates);
   let apiKey = "73a00877081bd43422bdee0f3022beb5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 } 
 
@@ -97,7 +101,7 @@ function showResponse(response) {
 }
 function searchCity(cityIn) {
   let apiKey = "73a00877081bd43422bdee0f3022beb5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityIn}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityIn}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showResponse);
 }
 function submitSearch(event) {
@@ -109,31 +113,12 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitSearch);
 
 
-function displayFahrenheitTemperature (event){
-  event.preventDefault();
-   let temperatureVal = document.querySelector("#temp");
-   fahrenheitLink.classList.add("active");
-   celsiusLink.classList.remove("active");
- let fahrenheitTemperature = (celsiusTemperature * 9) /5 + 32;
- temperatureVal.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-let celsiusTemperature = null; 
-
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-
 function displayCelsiusTemperature (event){
   event.preventDefault();
   let temperatureVal = document.querySelector("#temp");
    temperatureVal.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-searchCity("New York");
+searchCity("Avon");
 
 
