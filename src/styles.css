@@ -80,7 +80,7 @@ footer {
 }
 #fair{
   position:relative;
-  top: -20px;
+  top: -30px;
 }
 #weather-change-icon{
   padding: 6px;
@@ -88,6 +88,7 @@ footer {
 .active{
   cursor:default;
   color: #212521;
+
 }
 .active:hover{
   text-decoration: none;
